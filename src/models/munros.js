@@ -14,32 +14,7 @@ Munros.prototype.getData = function () {
 };
 
 Munros.prototype.handleDataReady = function (munros) {
-  const munroNames = this.getMunroNames(munros);
-  this.modelMunros(munros, munroNames);
-};
-
-Munros.prototype.getMunroNames = function (munros) {
-  return munros
-    .map(munro => munro.name);
-    // .filter((name, index, names) => names.indexOf(name) === index;
-};
-
-Munros.prototype.modelMunros = function (munros, munroNames) {
-  this.munros = munroNames.map((munroName) => {
-    return {
-      name: munroName,
-      meaning: this.munrosByMeaning(munros, munroName)
-      height: this.munrosByHeight(munros, munroName)
-    };
-  });
-};
-
-Munros.prototype.munrosByMeaning = function (munros, meaning) {
-  return munros.filter(munro => munro.meaning === meaning);
-};
-
-Munros.prototype.munrosByHeight = function (munros, height) {
-  return munros.filter(munro => munro.height === height);
+  this.munros = munros;
 };
 
 module.exports = Munros;
