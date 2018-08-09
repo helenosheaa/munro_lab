@@ -33,7 +33,7 @@ MunroView.prototype.createMunrosList = function () {
 };
 
 MunroView.prototype.populateList = function (list) {
-  console.log(this.munro);
+  // console.log(this.munro);
     const munroListMeaning = document.createElement('li');
     munroListMeaning.textContent = this.munro.meaning;
     list.appendChild(munroListMeaning);
