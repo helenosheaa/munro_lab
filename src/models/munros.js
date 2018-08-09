@@ -9,7 +9,7 @@ Munros.prototype.getData = function () {
   const requestHelper = new RequestHelper('https://munroapi.herokuapp.com/api/munros');
   requestHelper.get((data) => {
     this.handleDataReady(data);
-    PubSub.publish('Monros:munros-data-ready', this.munros);
+    PubSub.publish('Munros:munros-data-ready', this.munros);
   });
 };
 
